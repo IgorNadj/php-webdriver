@@ -100,7 +100,7 @@ class CurlService implements CurlServiceInterface
                 ? ' with params: ' . json_encode($parameters) : ''
             );
 
-            throw WebDriverException::factory(WebDriverException::CURL_EXEC, $message . "\n\n" . $error);
+            throw WebDriverException::factory(WebDriverException::CURL_EXEC, $message . "\n\n" . $error. "\n\n" . ' ------RAW RESULT: '.$rawResult.'------');
         }
 
         curl_close($curl);
